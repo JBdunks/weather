@@ -1,0 +1,44 @@
+#wd {
+  margin: auto;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.container-fluid {
+  margin-top: 8px;
+  height: 100%;
+  width: 100%;
+}
+
+#left {
+  border: 3px solid black;
+  height: 600px;
+}
+#right {
+  border: 3px solid green;
+  height: 600px;
+}
+#today {
+  border: 1px solid red;
+  height: 55%;
+  margin: 20px;
+}
+#forecast {
+  border: 1px solid yellow;
+  background-color: yellow;
+  height: 40%;
+  padding-left: 33px;
+}
+#today-info {
+  background-color: grey;
+  height: 70%;
+}
+#today {
+  padding: 4px;
+}
+.future {
+  height: 180px;
+  width: 150px;
+  margin: 12px;
+  border: 1px solid blue;
+}

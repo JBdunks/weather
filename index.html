@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Forecast</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-light .center-block"
+      style="background-color: #e3f2fd;"
+    >
+      <h1 id="wd">Weather Dashboard</h1>
+    </nav>
+
+    <!--main area-->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4" id="left">
+          <h4>Search for a City:</h4>
+          asdfasd
+        </div>
+        <div class="col-8" id="right">
+          <div class="row" id="today">
+           <div>
+            <p>
+            <h3 id="city-name">City name and date</h3><br/>
+          
+
+            <h6>Temperature: <span id="today-temp"></span>99 degrees</h6><br/>
+
+            <h6>Humidity: <span id="today-humid"></span>44%</h6><br/>
+            <h6>Wind Speed: <span id="today-wind"></span>9.mph</h6><br/>
+            <h6>6UV Index: <span id="today-uv"></span>9.9</h6><br/>
+            </p>
+            </div>
+          </div>
+
+          <div class="row" id="forecast">
+            <h4>5-Day Forecast:</h4>
+            <div class="row">
+            <div id="one" class ="future"></div>
+            <div id="two" class ="future"></div>
+            <div id="three" class ="future"></div>
+            <div id="four" class ="future"></div>
+            <div id="five" class ="future"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
