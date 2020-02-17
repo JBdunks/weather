@@ -11,21 +11,16 @@
 }
 
 #left {
-  border: 3px solid black;
   height: 600px;
 }
 #right {
-  border: 3px solid green;
   height: 600px;
 }
 #today {
-  border: 1px solid red;
   height: 55%;
   margin: 20px;
 }
 #forecast {
-  border: 1px solid yellow;
-  background-color: yellow;
   height: 40%;
   padding-left: 33px;
 }
@@ -41,10 +36,13 @@
   width: 150px;
   margin: 12px;
   border: 1px solid blue;
+  background-color: #027bff;
+  color: white;
+  padding-top: 5px;
+  padding-left: 5px;
 }
 
 #city-list {
-  border: 1px solid tomato;
   width: 300px;
   height: 420px;
 }
@@ -54,4 +52,9 @@
 .city-btn {
   width: 300px;
   text-align: left;
+  border: 1px outset #027bff;
+  background-color: #e3f2fd;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-weight: bold;
 }
