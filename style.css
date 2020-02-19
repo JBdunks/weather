@@ -58,3 +58,11 @@
   margin-bottom: 1px;
   font-weight: bold;
 }
+.safe {
+  background-color: greenyellow;
+  color: grey;
+}
+.danger {
+  background-color: tomato;
+  color: white;
+}
