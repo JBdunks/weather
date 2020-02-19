@@ -56,20 +56,26 @@ function displayCityInfo() {
     method: "GET"
   }).then(function(forecast) {
     console.log(queryTWO);
+    console.log(forecast.list[0].weather[0].icon);
 
     for (var i = 0; i < 40; i = i + 8) {
       var forecastDate = forecast.list[i].dt;
+      var foreIcon =
+        "<img src='http://openweathermap.org/img/w/" +
+        forecast.list[i].weather[0].icon +
+        ".png' alt='Icon depicting current weather.'>";
 
       var forDate = moment.unix(forecastDate).format("MM/DD/YYYY");
       var kel = forecast.list[i].main.temp;
       var fTemp = ((kel - 273.15) * 9) / 5 + 32;
       var newDiv = $("<div class ='future'>");
       var fDate = $("<div>").text(forDate);
-      var fIcon = $("<div>").text("icon");
+      var fIcon = $("<div>").html(foreIcon);
       var forTemp = $("<div>").text("Temp: " + fTemp.toFixed(2) + "°F");
       var fHumid = $("<div>").text(
         "Humidity: " + forecast.list[i].main.humidity
       );
+
       newDiv.append(fDate, fIcon, forTemp, fHumid);
       $("#forecast-row").append(newDiv);
       console.log("working?");
