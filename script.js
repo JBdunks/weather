@@ -1,5 +1,4 @@
 var cities = [];
-//var m = moment().format("MMMM Do YYYY");
 
 function renderButtons() {
   $("#city-list").empty();
@@ -52,13 +51,14 @@ function displayCityInfo() {
       url: queryTHREE,
       method: "GET"
     }).then(function(uvIndex) {
+      $("#today-uv").html(uvIndex.value);
       if (uvIndex.value > 5.99) {
         $("#today-uv").addClass("danger");
+        $("#today-uv").removeClass("safe");
       } else {
         $("#today-uv").addClass("safe");
+        $("#today-uv").removeClass("danger");
       }
-
-      $("#today-uv").html(uvIndex.value);
     });
   });
 
@@ -99,39 +99,10 @@ $("#add-city").on("click", function(event) {
   var city = $("#city-input")
     .val()
     .trim();
+  if (city.length < 1) {
+    return;
+  }
   cities.push(city);
   renderButtons();
 });
-
 $(document).on("click", ".city-btn", displayCityInfo);
-
-/*
-var queryURL =
-  "https://api.openweathermap.org/data/2.5/weather?q=London&APPID=e935932a7a61cfd6e86777324be7ec1a";
-
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function(response) {
-  console.log(queryURL);
-  console.log(response);
-  console.log(response.main.temp;
-  console.log(response.main.temp);
-  console.log(response.main.humidity);
-  console.log(response.wind.speed);
-  console.log("----------");
-});
-
-var queryTWO =
-  "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=e935932a7a61cfd6e86777324be7ec1a";
-
-$.ajax({
-  url: queryTWO,
-  method: "GET"
-}).then(function(forecast) {
-  console.log(queryTWO);
-  console.log(forecast);
-  console.log(forecast.list[0].main.temp);
-  console.log(forecast.list[0].main.humidity);
-});
-*/
