@@ -1,7 +1,5 @@
 var cities = [];
-var m = moment().format("MMMM Do YYYY");
-var cal = moment(m).format("MM/DD/YYYY");
-console.log(cal);
+//var m = moment().format("MMMM Do YYYY");
 
 function renderButtons() {
   $("#city-list").empty();
@@ -25,15 +23,24 @@ function displayCityInfo() {
     url: queryURL,
     mehtod: "GET"
   }).then(function(response) {
-    //var cityDiv = "<div class = 'city'>";
-    console.log(response);
+    console.log(queryURL);
+    console.log(response.weather[0].main);
+    console.log(response.weather[0].icon);
+
+    console.log("-----");
+
     var k = response.main.temp;
     var f = ((k - 273.15) * 9) / 5 + 32;
+    var currentDay = moment.unix(response.dt).format("MM/DD/YYYY");
+    var icon = $("<div>").html(
+      "<img src='http://openweathermap.org/img/w/" +
+        response.weather[0].icon +
+        ".png' alt='Icon depicting current weather.'>"
+    );
 
-    var formatDate = response.dt;
+    $("#city-name").text(city + " " + currentDay);
+    $("#city-name").append(icon);
 
-    var responseDate = moment(formatDate).format("MM/DD/YYYY");
-    $("#city-name").text(city + " " + responseDate);
     $("#today-temp").text(f.toFixed(2) + "°F");
     $("#today-humid").text(response.main.humidity + "%");
     $("#today-wind").text(response.wind.speed + "Mph");
@@ -49,13 +56,11 @@ function displayCityInfo() {
     method: "GET"
   }).then(function(forecast) {
     console.log(queryTWO);
-    console.log(forecast);
-    console.log(forecast.list[0].main.temp);
-    console.log(forecast.list[0].main.humidity);
-    for (var i = 0; i < 5; i++) {
+
+    for (var i = 0; i < 40; i = i + 8) {
       var forecastDate = forecast.list[i].dt;
 
-      var forDate = moment(forecastDate).format("MM/DD/YYYY");
+      var forDate = moment.unix(forecastDate).format("MM/DD/YYYY");
       var kel = forecast.list[i].main.temp;
       var fTemp = ((kel - 273.15) * 9) / 5 + 32;
       var newDiv = $("<div class ='future'>");
