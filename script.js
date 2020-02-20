@@ -51,6 +51,7 @@ function displayCityInfo() {
       url: queryTHREE,
       method: "GET"
     }).then(function(uvIndex) {
+      console.log(queryTHREE);
       $("#today-uv").html(uvIndex.value);
       if (uvIndex.value > 5.99) {
         $("#today-uv").addClass("danger");
@@ -149,6 +150,7 @@ function cityTop(city) {
       url: queryTHREE,
       method: "GET"
     }).then(function(uvIndex) {
+      console.log(queryTHREE);
       $("#today-uv").html(uvIndex.value);
       if (uvIndex.value > 5.99) {
         $("#today-uv").addClass("danger");
