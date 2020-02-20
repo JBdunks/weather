@@ -27,7 +27,7 @@ function displayCityInfo() {
     var currentDay = moment.unix(response.dt).format("MM/DD/YYYY");
 
     var icon =
-      "<img src='http://openweathermap.org/img/w/" +
+      "<img src='https://openweathermap.org/img/w/" +
       response.weather[0].icon +
       ".png' alt='Icon depicting current weather.'>";
 
@@ -74,7 +74,7 @@ function displayCityInfo() {
     for (var i = 0; i < 40; i = i + 8) {
       var forecastDate = forecast.list[i].dt;
       var foreIcon =
-        "<img src='http://openweathermap.org/img/w/" +
+        "<img src='https://openweathermap.org/img/w/" +
         forecast.list[i].weather[0].icon +
         ".png' alt='Icon depicting current weather.'>";
 
