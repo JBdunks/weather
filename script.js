@@ -42,7 +42,7 @@ function displayCityInfo() {
     $("#today-wind").text(response.wind.speed + "Mph");
 
     var queryTHREE =
-      "https://api.openweathermap.org/data/2.5/uvi?appid=e935932a7a61cfd6e86777324be7ec1a&lat=" +
+      "http://api.openweathermap.org/data/2.5/uvi?appid=e935932a7a61cfd6e86777324be7ec1a&lat=" +
       lat +
       "&lon=" +
       lon;
@@ -109,8 +109,6 @@ $("#add-city").on("click", function(event) {
 });
 $(document).on("click", ".city-btn", displayCityInfo);
 
-//Basicly just cut and paste previous code to make it display after entering city instead of just clicking from list
-//I feel like there has to be a more efficent way to have done it.   congrats on your new job, you will be missed
 function cityTop(city) {
   $("#forecast-row").empty();
   var queryURL =
@@ -141,7 +139,7 @@ function cityTop(city) {
     $("#today-wind").text(response.wind.speed + "Mph");
 
     var queryTHREE =
-      "https://api.openweathermap.org/data/2.5/uvi?appid=e935932a7a61cfd6e86777324be7ec1a&lat=" +
+      "http://api.openweathermap.org/data/2.5/uvi?appid=e935932a7a61cfd6e86777324be7ec1a&lat=" +
       lat +
       "&lon=" +
       lon;
